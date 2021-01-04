@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+body{
+    background-color: #f7f6f6;
+}
+
+body > div:nth-child(1){
+    background-color: rgba(22, 117, 73, 0.727);
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: ". . ." ". uno ." ". a .";
+    height: 65vh;
+    color: bisque;
+    width: 100%;
+    /* clip-path: circle(500px at 50% 5%); */
+    background: #fff fixed no-repeat;
+    background-image: url("../img/bg-cover.gif");
+}
+h1{
+    font-size: max(6rem, 3rem);
+    width: 100vw;
+    font-family: 'Oswald', sans-serif;
+}
+.header__title{
+    grid-area: uno;
+    text-align: center;
+
+}
+.div2{
+    display: flex;
+    gap: 10px;
+    /* flex-wrap: wrap; */
+    overflow-x: scroll;
+    position: sticky;
+    top: 0px;
+    z-index: 99;
+}
+.div2::-webkit-scrollbar{
+    margin: 4px;
+    width: auto;
+    height: 6px;
+    background: transparent;
+}
+.div2::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: rgba(26, 26, 26, 0.2);
+}
+.div2 .categories{
+    flex: 1 0 20%;
+    text-align: center;
+    align-content: center;
+    min-width: 170px;
+    border-radius: 5px;
+    background-color: #fff;
+    background-size: 50%;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-image: url('../img/sm-cover.jpeg') ;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    box-shadow: rgba(21, 21, 21, 0.2) 0 0 10px;
+}
+.categories__title{
+    font-family: lato;
+    font-weight:bold;
+    color: rgb(208, 184, 50);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+/**** PRODUCTS ****/
+#a3{
+    margin: 15px auto 15px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+#a3 .card-product{
+    flex: 0 1 250px;
+    height: 300px;
+    min-width: 100px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.card-product{
+    border: 1px solid #9999;
+    height: 100px;
+    width: 200px;
+    position: relative;
+    background-color: #fff;
+    transition: .4s ease box-shadow;
+
+}
+.card-product:hover{
+    box-shadow: rgba(21, 21, 21, 0.3) 0 0 8px;
+}
+.card-product__img{
+    /* width: 100%; */
+    height: 80%;
+    overflow: hidden;
+}
+.card-product__img-element{
+    width: 100%;
+}
+.card-product__name{
+    font-family: lato;
+    font-size: 12px;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 10px;
+    word-wrap: wrap;
+}
+/**** FOOTER ****/
+footer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    background: #fff fixed no-repeat;
+    background-image: url("../img/bg-cover.gif");
+    color: blanchedalmond;
+    height: 30vh;
+
+}
+svg{
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+/**** whatsapp floating bottom ****/
+.fa-whatsapp {
+    background-color: #25D366;
+    border-radius: 50%;
+    padding-top: 9px;
+    -webkit-box-shadow: 0 0 10px rgba(19, 19, 19, 0.2);
+            box-shadow: 0 0 10px rgba(19, 19, 19, 0.2);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    z-index: 20;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+  }
