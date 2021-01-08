@@ -8,42 +8,60 @@
 html{
     scroll-behavior: smooth;
     overflow-x: hidden;
+    font-family: lato;
+
 }
 body{
-    background-color: #f7f6f6;
+    background-color:#f9fefe;
 }
+:root{
+    --brand-color: rgb(245, 219, 73);
+}
+/**** Header ****/
 
-body > div:nth-child(1){
-    background-color: rgba(22, 117, 73, 0.727);
+.header{
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: ". . ." ". uno ." ". a .";
-    height: 65vh;
-    color: bisque;
-    width: 100%;
-    /* clip-path: circle(500px at 50% 5%); */
-    background: #fff fixed no-repeat;
+    grid-template-areas: ". . ." ". uno ." ;
+    height: 82vh;
     background-image: url("../img/bg-cover.gif");
 }
-h1{
-    font-size: max(6rem, 3rem);
-    width: 100vw;
-    font-family: 'Oswald', sans-serif;
-}
-.header__title{
+.header__wrapper{
     grid-area: uno;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    overflow: hidden;
     text-align: center;
-
 }
+
+.brand__name{
+    font-size: 15ch;
+    font-family: 'Oswald', sans-serif;
+    line-height: 8.5rem;
+    margin-bottom: 1rem;
+    color: var(--brand-color);
+}
+
+.header span{
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: bisque;
+}
+
+.header__brand-slogan{
+    display: inline-block;
+    min-width: 15ch;
+}
+
+/**** Category ****/
 .div2{
     display: flex;
     gap: 10px;
-    /* flex-wrap: wrap; */
     overflow-x: scroll;
     position: sticky;
     top: 0px;
-    z-index: 99;
+    z-index: 50;
 }
 .div2::-webkit-scrollbar{
     margin: 4px;
@@ -55,63 +73,80 @@ h1{
     border-radius: 10px;
     background-color: rgba(26, 26, 26, 0.2);
 }
-.div2 .categories{
+a{
+    text-decoration: none;
+}
+.categories{
     flex: 1 0 20%;
-    text-align: center;
-    align-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-width: 170px;
     border-radius: 5px;
     background-color: #fff;
-    background-size: 50%;
-    background-position: right;
-    background-repeat: no-repeat;
-    background-image: url('../img/sm-cover.jpeg') ;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 6px;
     box-shadow: rgba(21, 21, 21, 0.2) 0 0 10px;
+    padding: 1.5rem;
+    max-height: 6rem;
+    background-size: 100%;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.categories__pesas{
+    background-image: url('../img/categories__pesas.jpg') ;
+}
+
+.categories__discos{
+    background-image: url('../img/categories__discos.jpg') ;
+}
+.categories__barras{
+    background-image: url('../img/categories__barra.jpg') ;
+}
+.categories__accesorios-gym{
+    background-image: url('../img/categories__articulos.jpg') ;
 }
 .categories__title{
-    font-family: lato;
     font-weight:bold;
-    color: rgb(208, 184, 50);
+    color: var(--brand-color);
     font-size: 1.5rem;
     text-transform: uppercase;
 }
 /**** PRODUCTS ****/
-#a3{
+
+.products__wrapper{
     margin: 15px auto 15px auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 13px;
     justify-content: center;
 }
 
-#a3 .card-product{
-    flex: 0 1 250px;
-    height: 300px;
-    min-width: 100px;
-    border-radius: 5px;
-    overflow: hidden;
-}
 .card-product{
+    flex: 0 1 20%;
+    height: 300px;
+    min-width: 170px;
+    max-width: 250px;
+    max-height: 250px;
+    border-radius: 5px;
     border: 1px solid #9999;
-    height: 100px;
-    width: 200px;
-    position: relative;
     background-color: #fff;
-    transition: .4s ease box-shadow;
+    transition: .4s ease  box-shadow, transform .2s ease;
 
 }
 .card-product:hover{
     box-shadow: rgba(21, 21, 21, 0.3) 0 0 8px;
+    transform: scale(1.050);
 }
 .card-product__img{
-    /* width: 100%; */
     height: 80%;
     overflow: hidden;
 }
 .card-product__img-element{
-    width: 100%;
+    margin-left: 50%;
+    transform: translate(-50%);
+    height: 100%;
 }
 .card-product__name{
     font-family: lato;
@@ -144,14 +179,47 @@ svg{
     border-radius: 50%;
     padding-top: 9px;
     -webkit-box-shadow: 0 0 10px rgba(19, 19, 19, 0.2);
-            box-shadow: 0 0 10px rgba(19, 19, 19, 0.2);
+    box-shadow: 0 0 10px rgba(19, 19, 19, 0.2);
     position: fixed;
     bottom: 20px;
     right: 20px;
     font-size: 2rem;
     color: white;
-    z-index: 20;
+    z-index: 100;
     height: 50px;
     width: 50px;
     text-align: center;
+    transition: transform .2s ease, background-color .2s ease;
   }
+ .fa-whatsapp:hover{
+    transform: scale(1.050);
+    background-color: #20b657;
+
+ }
+
+/**** Product Category****/
+.Product__category-wrapper{
+    /* width: 100%; */
+    height: fit-content;
+    max-height: 150px;
+    background: #b49e65;
+/* background: -moz-linear-gradient(117deg, rgba(50,50,50,1) 0%, rgba(14,8,0,1) 100%);
+background: -webkit-linear-gradient(117deg, rgba(50,50,50,1) 0%, rgba(14,8,0,1) 100%);
+background: linear-gradient(117deg, rgba(50,50,50,1) 0%, rgba(14,8,0,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#323232",endColorstr="#0e0800",GradientType=1); */
+overflow: hidden;   
+
+}
+
+.Product__category{
+    height: 100%;
+}
+.category-cover__name{
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    line-height: 15vw;
+    font-size: 25vmin;
+}
+#accesorios_gym .category-cover__name{
+    font-size: calc(10vw);
