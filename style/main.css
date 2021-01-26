@@ -23,6 +23,7 @@ body{
     display: grid;
     grid-template-areas: ". . ." ". uno ." ;
     height: 82vh;
+    background: #fff fixed no-repeat;
     background-image: url("../img/bg-cover.gif");
 }
 .header__wrapper{
@@ -203,11 +204,7 @@ svg{
     height: fit-content;
     max-height: 150px;
     background: #b49e65;
-/* background: -moz-linear-gradient(117deg, rgba(50,50,50,1) 0%, rgba(14,8,0,1) 100%);
-background: -webkit-linear-gradient(117deg, rgba(50,50,50,1) 0%, rgba(14,8,0,1) 100%);
-background: linear-gradient(117deg, rgba(50,50,50,1) 0%, rgba(14,8,0,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#323232",endColorstr="#0e0800",GradientType=1); */
-overflow: hidden;   
+    overflow: hidden;   
 
 }
 
